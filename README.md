@@ -16,8 +16,6 @@ const fetchData=()=>{
         fetch("http://7edbd0d0.ngrok.io/")
         .then(res=>res.json())
         .then(result=>{
-            // setData(result)
-            // setLoading(false)
             dispatch({type:"ADD_DATA",payload:result})
             dispatch({type:"SET_LOADING",payload:false})
         }).catch(err=>{
