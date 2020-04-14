@@ -9,21 +9,18 @@ To generate ngrok URL you need to go through documentation about NGROK https://w
 Some issue might show while loading first time due to unstable connection to the database so, try some given step to avoid it:
 [if it shows an alert message "Something went wrong"]
 Go to Home.js file 
-move to line no. 25 in function 
+move to line no. 25 in function from .catch(err=>{})
 
-
-const fetchData=()=>{
-        fetch("http://7edbd0d0.ngrok.io/")
-        .then(res=>res.json())
-        .then(result=>{
-            dispatch({type:"ADD_DATA",payload:result})
-            dispatch({type:"SET_LOADING",payload:false})
-        }).catch(err=>{
-            Alert.alert("something went wrong") 
-        })
-    }
-    
-    
+      const fetchData=()=>{
+            fetch("http://7edbd0d0.ngrok.io/")
+            .then(res=>res.json())
+            .then(result=>{
+                dispatch({type:"ADD_DATA",payload:result})
+                dispatch({type:"SET_LOADING",payload:false})
+            }).catch(err=>{
+                Alert.alert("something went wrong") 
+            })
+        }
 Remove code.......
     
     .catch(err=>{
